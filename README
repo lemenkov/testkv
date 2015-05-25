@@ -1,0 +1,15 @@
+Requires Mochiweb installed.
+
+How to test:
+
+$ nc -u 127.0.0.1 8081
+{"key":"helloworld","operation":"put","status":"ok","val":"regpuwrnb95-4g9"}
+{"key":"helloworld","operation":"put","status":"ok"}
+
+$ nc 127.0.0.1 8082
+{"key":"helloworld2","operation":"put","status":"ok","val":"regpuwrnb95"}
+{"key":"helloworld2","operation":"put","status":"ok"}
+
+$ curl -H "Content-Type: application/json" -X GET http://localhost:8080/helloworld
+$ curl -H "Content-Type: application/binary" -X PUT -d  "regpuwrnb95-4g9i=495-34wjoperjg"" http://localhost:8080/helloworld3
+$ curl -H "Content-Type: application/json" -X DELETE http://localhost:8080/helloworld
